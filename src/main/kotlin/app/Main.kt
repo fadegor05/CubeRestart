@@ -22,7 +22,6 @@ suspend fun main() {
     val t = Terminal()
     t.println(titleOut())
     t.println(creditsOut())
-
     if (ConfigManager.config.instanceDirectory == "") {
         while (true) {
             t.println(green("Выбрите папку со сборкой (там где находятся mods, resourcepack, config и тд.)"))

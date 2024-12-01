@@ -4,6 +4,7 @@ import com.github.ajalt.mordant.rendering.TextColors.*
 import com.github.ajalt.mordant.rendering.TextStyles.*
 import java.awt.event.ActionEvent
 import java.io.File
+import java.nio.file.Paths
 import javax.swing.JFileChooser
 
 
@@ -33,6 +34,7 @@ fun requestFolderFromUser(): File? {
     val fileChooser = JFileChooser()
     fileChooser.fileSelectionMode = JFileChooser.DIRECTORIES_ONLY
     fileChooser.dialogTitle = "Выбрать папку"
+    fileChooser.selectedFile = File(Paths.get("%appdata%").toString())
 
     val result = fileChooser.showDialog(null, "Выбрать папку")
     return if (result == JFileChooser.APPROVE_OPTION && fileChooser.selectedFile.isDirectory) {
