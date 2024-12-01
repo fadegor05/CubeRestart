@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="59dbf41f-237f-47da-9fe3-3dfa0b9ed961" name="Changes" comment="added">
+    <list default="true" id="59dbf41f-237f-47da-9fe3-3dfa0b9ed961" name="Changes" comment="added main config">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/app/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/app/Main.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/app/data/api/ApiClient.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/app/data/api/ApiClient.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/app/data/storage/ConfigManager.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/app/data/storage/ConfigManager.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/app/presentation/CliInterface.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/app/presentation/CliInterface.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,12 +41,6 @@
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="CubeRestart" type="f1a62948:ProjectNode" />
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="application" type="c8890929:TasksNode$1" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="CubeRestart" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
                 <item name="build" type="c8890929:TasksNode$1" />
               </path>
               <path>
@@ -56,18 +48,6 @@
                 <item name="CubeRestart" type="f1a62948:ProjectNode" />
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
                 <item name="build setup" type="c8890929:TasksNode$1" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="CubeRestart" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="other" type="c8890929:TasksNode$1" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="CubeRestart" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="verification" type="c8890929:TasksNode$1" />
               </path>
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
@@ -112,8 +92,14 @@
     "Gradle.Build CubeRestart.executor": "Run",
     "Gradle.CubeRestart [assemble].executor": "Run",
     "Gradle.CubeRestart [build].executor": "Run",
+    "Gradle.CubeRestart [clean].executor": "Run",
+    "Gradle.CubeRestart [createExe].executor": "Run",
+    "Gradle.CubeRestart [createMergedModule].executor": "Run",
     "Gradle.CubeRestart [fatJar].executor": "Run",
     "Gradle.CubeRestart [jar].executor": "Run",
+    "Gradle.CubeRestart [jlinkZip].executor": "Run",
+    "Gradle.CubeRestart [jlink].executor": "Run",
+    "Gradle.CubeRestart [jpackageImage].executor": "Run",
     "Gradle.CubeRestart [run].executor": "Run",
     "Kotlin.Main.executor": "Run",
     "Kotlin.MainKt.executor": "Run",
@@ -138,8 +124,8 @@
       <recent name="app" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.CubeRestart [fatJar]">
-    <configuration name="CubeRestart [assemble]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager" selected="Gradle.CubeRestart [createExe]">
+    <configuration name="CubeRestart [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -150,7 +136,7 @@
         </option>
         <option name="taskNames">
           <list>
-            <option value="assemble" />
+            <option value="clean" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -161,7 +147,7 @@
       <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="CubeRestart [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="CubeRestart [createExe]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -172,7 +158,29 @@
         </option>
         <option name="taskNames">
           <list>
-            <option value="build" />
+            <option value="createExe" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="CubeRestart [createMergedModule]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="createMergedModule" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -205,7 +213,7 @@
       <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="CubeRestart [jar]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="CubeRestart [jpackageImage]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -216,29 +224,7 @@
         </option>
         <option name="taskNames">
           <list>
-            <option value="jar" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>false</RunAsTest>
-      <method v="2" />
-    </configuration>
-    <configuration name="CubeRestart [run]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="run" />
+            <option value="jpackageImage" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -258,20 +244,20 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Gradle.CubeRestart [assemble]" />
-      <item itemvalue="Gradle.CubeRestart [build]" />
+      <item itemvalue="Gradle.CubeRestart [clean]" />
+      <item itemvalue="Gradle.CubeRestart [createExe]" />
+      <item itemvalue="Gradle.CubeRestart [createMergedModule]" />
       <item itemvalue="Gradle.CubeRestart [fatJar]" />
-      <item itemvalue="Gradle.CubeRestart [jar]" />
-      <item itemvalue="Gradle.CubeRestart [run]" />
+      <item itemvalue="Gradle.CubeRestart [jpackageImage]" />
       <item itemvalue="Kotlin.Main" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.CubeRestart [createExe]" />
         <item itemvalue="Gradle.CubeRestart [fatJar]" />
-        <item itemvalue="Gradle.CubeRestart [run]" />
-        <item itemvalue="Gradle.CubeRestart [assemble]" />
-        <item itemvalue="Gradle.CubeRestart [build]" />
-        <item itemvalue="Gradle.CubeRestart [jar]" />
+        <item itemvalue="Gradle.CubeRestart [clean]" />
+        <item itemvalue="Gradle.CubeRestart [createMergedModule]" />
+        <item itemvalue="Gradle.CubeRestart [jpackageImage]" />
       </list>
     </recent_temporary>
   </component>
@@ -298,7 +284,7 @@
       <workItem from="1732811864051" duration="5141000" />
       <workItem from="1732898989119" duration="2319000" />
       <workItem from="1732940074340" duration="3813000" />
-      <workItem from="1733061256542" duration="18304000" />
+      <workItem from="1733061256542" duration="21518000" />
     </task>
     <task id="LOCAL-00001" summary="init commit">
       <option name="closed" value="true" />
@@ -316,7 +302,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733074158964</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="added main config">
+      <option name="closed" value="true" />
+      <created>1733080168085</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1733080168085</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -325,7 +319,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="init commit" />
     <MESSAGE value="added" />
-    <option name="LAST_COMMIT_MESSAGE" value="added" />
+    <MESSAGE value="added main config" />
+    <option name="LAST_COMMIT_MESSAGE" value="added main config" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

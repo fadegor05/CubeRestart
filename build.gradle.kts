@@ -9,7 +9,7 @@ plugins {
 
 application {
     applicationDefaultJvmArgs = listOf("-Dapple.awt.UIElement=true")
-    mainClass.set("app.MainKt")
+    mainClass.set("com.fadegor05.app.MainKt")
 }
 
 group = "com.fadegor05"
@@ -35,13 +35,28 @@ tasks.test {
     useJUnitPlatform()
 }
 
+tasks.register<Exec>("createExe") {
+    group = "build"
+    description = "Создаёт EXE файл с использованием jpackage."
+    val jarFile = tasks.named("fatJar").get()
+
+    commandLine(
+        "jpackage",
+        "--input", "./build/libs",
+        "--name", "CubeRestart",
+        "--main-jar", "CubeRestart-1.1-all.jar",
+        "--main-class", "com.fadegor05.app.MainKt",
+        "--icon", "logo.ico"
+    )
+}
+
 tasks.register<Jar>("fatJar") {
     group = "build"
     description = "Assembles a fat JAR including all dependencies."
 
     // Укажите основной класс
     manifest {
-        attributes["Main-Class"] = "app.MainKt" // Замените на ваш главный класс
+        attributes["Main-Class"] = "com.fadegor05.app.MainKt" // Замените на ваш главный класс
     }
 
     duplicatesStrategy = DuplicatesStrategy.EXCLUDE
