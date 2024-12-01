@@ -1,6 +1,9 @@
 package app.data.api
 
 import app.data.models.ApiResponse
+import com.github.ajalt.mordant.terminal.Terminal
+import com.github.ajalt.mordant.widgets.progress.progressBar
+import com.github.ajalt.mordant.widgets.progress.progressBarLayout
 import io.ktor.client.*
 import io.ktor.client.call.*
 import io.ktor.client.request.*
@@ -23,12 +26,15 @@ class ApiClient {
     }
 
     suspend fun downloadFile(endpoint: String, path: Path, fileName: String) {
-        val response = client.get(endpoint)
+        val filePath = path.resolve(fileName)
+        if (!Files.exists(filePath)) {
+            val response = client.get(endpoint)
 
-        if (response.status.value in 200..299) {
-            withContext(Dispatchers.IO) {
-                Files.newOutputStream(path.resolve(fileName)).buffered().use { outputStream ->
-                    response.bodyAsBytes().inputStream().copyTo(outputStream)
+            if (response.status.value in 200..299) {
+                withContext(Dispatchers.IO) {
+                    Files.newOutputStream(filePath).buffered().use { outputStream ->
+                        response.bodyAsBytes().inputStream().copyTo(outputStream)
+                    }
                 }
             }
         }

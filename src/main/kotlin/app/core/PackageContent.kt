@@ -3,18 +3,22 @@ package app.core
 import app.data.api.ApiClient
 import app.data.models.Container
 import app.data.models.Content
+import com.github.ajalt.mordant.rendering.TextColors
+import com.github.ajalt.mordant.terminal.Terminal
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import java.io.File
 import java.nio.file.Files
 import java.nio.file.Path
 import java.nio.file.Paths
+import com.github.ajalt.mordant.rendering.TextColors.*
 import kotlin.io.path.createDirectories
 import kotlin.reflect.KSuspendFunction1
 
 
 class PackageContent(contentType: String, apiContent: List<Content>, packageContent: List<Content>, apiClient: ApiClient, basePath: Path) : BaseContent(contentType, apiContent, packageContent, apiClient, basePath) {
     private val contentPath = basePath.resolve(contentType)
+    private val t = Terminal()
 
     override fun handleDirectories() {
         contentPath.createDirectories()
@@ -49,14 +53,14 @@ class PackageContent(contentType: String, apiContent: List<Content>, packageCont
     }
 
     suspend fun deletePackageContent(content: Content) {
-        println("· Удаление ${content.file}")
+        t.println(brightWhite("· Удаление ${content.file}"))
         withContext(Dispatchers.IO) {
             Files.deleteIfExists(contentPath.resolve("[CubeRestart] ${content.file}"))
         }
     }
 
     suspend fun installPackageContent(content: Content) {
-        println("· Скачивание ${content.file}")
+        t.println(brightWhite("· Скачивание ${content.file}"))
         apiClient.downloadFile(content.url, contentPath, "[CubeRestart] ${content.file}")
     }
 
