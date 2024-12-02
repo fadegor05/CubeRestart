@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="59dbf41f-237f-47da-9fe3-3dfa0b9ed961" name="Changes" comment="added exec compile">
-      <change afterPath="$PROJECT_DIR$/resources/main.wxs" afterDir="false" />
+    <list default="true" id="59dbf41f-237f-47da-9fe3-3dfa0b9ed961" name="Changes" comment="added refined main.wxs">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/app/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/app/Main.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/app/presentation/CliInterface.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/app/presentation/CliInterface.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,7 +126,7 @@
       <recent name="app" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.CubeRestart [createMsi]">
+  <component name="RunManager" selected="Gradle.CubeRestart [fatJar]">
     <configuration name="CubeRestart [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -254,9 +255,9 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.CubeRestart [fatJar]" />
         <item itemvalue="Gradle.CubeRestart [createMsi]" />
         <item itemvalue="Gradle.CubeRestart [createExe]" />
-        <item itemvalue="Gradle.CubeRestart [fatJar]" />
         <item itemvalue="Gradle.CubeRestart [clean]" />
         <item itemvalue="Gradle.CubeRestart [createMergedModule]" />
       </list>
@@ -286,7 +287,7 @@
       <workItem from="1732898989119" duration="2319000" />
       <workItem from="1732940074340" duration="3813000" />
       <workItem from="1733061256542" duration="22990000" />
-      <workItem from="1733142493028" duration="1537000" />
+      <workItem from="1733142493028" duration="3069000" />
     </task>
     <task id="LOCAL-00001" summary="init commit">
       <option name="closed" value="true" />
@@ -320,7 +321,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733083397868</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="added refined main.wxs">
+      <option name="closed" value="true" />
+      <created>1733146057257</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1733146057257</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -331,7 +340,8 @@
     <MESSAGE value="added" />
     <MESSAGE value="added main config" />
     <MESSAGE value="added exec compile" />
-    <option name="LAST_COMMIT_MESSAGE" value="added exec compile" />
+    <MESSAGE value="added refined main.wxs" />
+    <option name="LAST_COMMIT_MESSAGE" value="added refined main.wxs" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

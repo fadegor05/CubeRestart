@@ -9,7 +9,7 @@ plugins {
 
 application {
     applicationDefaultJvmArgs = listOf("-Dapple.awt.UIElement=true")
-    mainClass.set("com.fadegor05.app.MainKt")
+    mainClass.set("app.MainKt")
 }
 
 group = "com.fadegor05"
@@ -28,6 +28,7 @@ dependencies {
     implementation("org.slf4j:slf4j-api:2.0.0")  // Если еще не добавлено
     implementation("ch.qos.logback:logback-classic:1.4.5")  // Добавьте это
     implementation("org.openjfx:javafx-controls:17")
+    implementation("org.jetbrains.kotlinx:kotlinx-cli:0.3.6")
 
 }
 
@@ -63,7 +64,7 @@ tasks.register<Jar>("fatJar") {
 
     // Укажите основной класс
     manifest {
-        attributes["Main-Class"] = "com.fadegor05.app.MainKt" // Замените на ваш главный класс
+        attributes["Main-Class"] = "app.MainKt" // Замените на ваш главный класс
     }
 
     duplicatesStrategy = DuplicatesStrategy.EXCLUDE

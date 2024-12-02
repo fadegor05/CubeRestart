@@ -34,7 +34,8 @@ fun requestFolderFromUser(): File? {
     val fileChooser = JFileChooser()
     fileChooser.fileSelectionMode = JFileChooser.DIRECTORIES_ONLY
     fileChooser.dialogTitle = "Выбрать папку"
-    fileChooser.selectedFile = File(Paths.get("%appdata%").toString())
+    val currentFolder = System.getProperty("user.dir")
+    fileChooser.selectedFile = File(Paths.get(currentFolder).toString())
 
     val result = fileChooser.showDialog(null, "Выбрать папку")
     return if (result == JFileChooser.APPROVE_OPTION && fileChooser.selectedFile.isDirectory) {

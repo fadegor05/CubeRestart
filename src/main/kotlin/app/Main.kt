@@ -14,15 +14,25 @@ import com.github.ajalt.mordant.rendering.TextStyles.*
 import com.github.ajalt.mordant.table.GridBuilder
 import com.github.ajalt.mordant.table.grid
 import com.github.ajalt.mordant.terminal.Terminal
+import kotlinx.cli.ArgParser
+import kotlinx.cli.ArgType
+import kotlinx.cli.default
 import java.nio.file.Paths
 import kotlin.system.exitProcess
 
 
-suspend fun main() {
+suspend fun main(args: Array<String>) {
+    val parser = ArgParser("CubeRestart")
+    val dir by parser.option(ArgType.String, shortName = "dir", description = "path to directory").default("")
+    val dirRequest by parser.option(ArgType.Boolean, shortName = "dir-request",description = "request directory")
+    val isLocalConfig by parser.option(ArgType.Boolean, shortName = "local-config",description = "local config")
+
+    parser.parse(args)
+
     val t = Terminal()
     t.println(titleOut())
     t.println(creditsOut())
-    if (ConfigManager.config.instanceDirectory == "") {
+    if (ConfigManager.config.instanceDirectory == "" || dirRequest == true) {
         while (true) {
             t.println(green("Выбрите папку со сборкой (там где находятся mods, resourcepack, config и тд.)"))
             val path = requestFolderFromUser()
@@ -33,8 +43,14 @@ suspend fun main() {
             }
             else {
                 t.println(yellow("Такого пути не существует"))
+                exitProcess(0)
             }
         }
+    }
+
+    if (dir != "") {
+        ConfigManager.config.instanceDirectory = dir
+        ConfigManager.saveConfig()
     }
 
     val apiClient = ApiClient()
