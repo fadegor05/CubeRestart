@@ -35,19 +35,26 @@ tasks.test {
     useJUnitPlatform()
 }
 
-tasks.register<Exec>("createExe") {
+tasks.register<Exec>("createMsi") {
     group = "build"
-    description = "Создаёт EXE файл с использованием jpackage."
-    val jarFile = tasks.named("fatJar").get()
+    description = "Creates MSI file from fatJar"
+    dependsOn("fatJar")
+    doFirst {
+        val jarTask = tasks.named("fatJar").get() as Jar
+        val jarFile = jarTask.archiveFile.get().asFile
 
-    commandLine(
-        "jpackage",
-        "--input", "./build/libs",
-        "--name", "CubeRestart",
-        "--main-jar", "CubeRestart-1.1-all.jar",
-        "--main-class", "com.fadegor05.app.MainKt",
-        "--icon", "logo.ico"
-    )
+        commandLine(
+            "jpackage",
+            "--input", "./build/libs",
+            "--name", "CubeRestart",
+            "--main-jar", jarFile.name,
+            "--main-class", "app.MainKt",
+            "--type", "msi",
+            "--resource-dir", "./resources",
+            "--win-shortcut",
+            "--win-console"
+        )
+    }
 }
 
 tasks.register<Jar>("fatJar") {
