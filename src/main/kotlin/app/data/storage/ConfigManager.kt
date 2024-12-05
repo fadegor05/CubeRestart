@@ -7,6 +7,7 @@ import java.io.File
 import java.nio.file.Path
 import java.nio.file.Paths
 import kotlin.io.path.createDirectories
+import kotlin.io.path.exists
 
 object ConfigManager {
     var config: Config = loadConfig()
@@ -32,6 +33,10 @@ object ConfigManager {
     }
 
     fun getConfigLocation(): Path {
+        val currentFolder = Paths.get(System.getProperty("user.dir"))
+        if (currentFolder.resolve("cube_restart.json").exists()) {
+            return currentFolder
+        }
         val userHome = System.getProperty("user.home")
         return when {
             System.getProperty("os.name").lowercase().contains("win") -> {

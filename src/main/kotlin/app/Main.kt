@@ -25,7 +25,6 @@ suspend fun main(args: Array<String>) {
     val parser = ArgParser("CubeRestart")
     val dir by parser.option(ArgType.String, shortName = "dir", description = "path to directory").default("")
     val dirRequest by parser.option(ArgType.Boolean, shortName = "dir-request",description = "request directory")
-    val isLocalConfig by parser.option(ArgType.Boolean, shortName = "local-config",description = "local config")
 
     parser.parse(args)
 

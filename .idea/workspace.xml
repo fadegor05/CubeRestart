@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="59dbf41f-237f-47da-9fe3-3dfa0b9ed961" name="Changes" comment="added refined main.wxs">
+    <list default="true" id="59dbf41f-237f-47da-9fe3-3dfa0b9ed961" name="Changes" comment="added currentFolder, args">
+      <change afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/app/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/app/Main.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/app/presentation/CliInterface.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/app/presentation/CliInterface.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/app/data/storage/ConfigManager.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/app/data/storage/ConfigManager.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,36 +88,37 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Gradle.Build CubeRestart.executor": "Run",
-    "Gradle.CubeRestart [assemble].executor": "Run",
-    "Gradle.CubeRestart [build].executor": "Run",
-    "Gradle.CubeRestart [clean].executor": "Run",
-    "Gradle.CubeRestart [createExe].executor": "Run",
-    "Gradle.CubeRestart [createMergedModule].executor": "Run",
-    "Gradle.CubeRestart [createMsi].executor": "Run",
-    "Gradle.CubeRestart [fatJar].executor": "Run",
-    "Gradle.CubeRestart [jar].executor": "Run",
-    "Gradle.CubeRestart [jlinkZip].executor": "Run",
-    "Gradle.CubeRestart [jlink].executor": "Run",
-    "Gradle.CubeRestart [jpackageImage].executor": "Run",
-    "Gradle.CubeRestart [run].executor": "Run",
-    "Kotlin.Main.executor": "Run",
-    "Kotlin.MainKt.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.keymap",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Gradle.Build CubeRestart.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.CubeRestart [assemble].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.CubeRestart [build].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.CubeRestart [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.CubeRestart [createExe].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.CubeRestart [createMergedModule].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.CubeRestart [createMsi].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.CubeRestart [fatJar].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.CubeRestart [jar].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.CubeRestart [jlinkZip].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.CubeRestart [jlink].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.CubeRestart [jpackageImage].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.CubeRestart [run].executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.MainKt.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/kotlin" />
@@ -287,7 +288,9 @@
       <workItem from="1732898989119" duration="2319000" />
       <workItem from="1732940074340" duration="3813000" />
       <workItem from="1733061256542" duration="22990000" />
-      <workItem from="1733142493028" duration="3069000" />
+      <workItem from="1733142493028" duration="7241000" />
+      <workItem from="1733226946347" duration="1642000" />
+      <workItem from="1733387112435" duration="391000" />
     </task>
     <task id="LOCAL-00001" summary="init commit">
       <option name="closed" value="true" />
@@ -329,7 +332,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733146057257</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="added currentFolder, args">
+      <option name="closed" value="true" />
+      <created>1733148852364</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1733148852364</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -341,7 +352,8 @@
     <MESSAGE value="added main config" />
     <MESSAGE value="added exec compile" />
     <MESSAGE value="added refined main.wxs" />
-    <option name="LAST_COMMIT_MESSAGE" value="added refined main.wxs" />
+    <MESSAGE value="added currentFolder, args" />
+    <option name="LAST_COMMIT_MESSAGE" value="added currentFolder, args" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
